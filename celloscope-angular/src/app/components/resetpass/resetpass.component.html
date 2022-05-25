@@ -1,0 +1,19 @@
+<div class="wrapper">
+
+    <div class="text-center mt-4 name"> Enter New Password </div>
+    <form class="p-3 mt-3" (ngSubmit)="resetPassword()" [formGroup]="formGroup">
+        <div class="form-field d-flex align-items-center">
+            <span class="far fa-user"></span>
+            <input type="password" name="password" id="password" placeholder="Password" formControlName="password"
+                [ngModel]="user.password" required>
+        </div>
+        <div class="form-outline form-white mb-4">
+            <div *ngIf="submitted && f['password'].errors">
+                <div class="error text-danger">
+                    Enter Your new password.
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn mt-3">Reset</button>
+    </form>
+</div>

@@ -1,0 +1,48 @@
+<div class="wrapper">
+    <div class="logo"> <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlY8zpEOaZIHpw5-eD_mG3H7BStxgq6p3qXgN0iImYUS7gJc1_Ju5rCPxTuBkprf-1DLc&usqp=CAU"
+            alt="">
+    </div>
+    <div class="text-center mt-4 name"> Registration </div>
+    <form class="p-3 mt-3" (ngSubmit)="saveUser()" [formGroup]="formGroup">
+        <div class="form-field d-flex align-items-center">
+            <span class="far fa-user"></span>
+            <input type="text" name="userId" id="userId" placeholder="User ID" formControlName="userId" required>
+
+        </div>
+        <div class="form-outline form-white mb-4">
+            <div *ngIf="submitted && f['userId'].errors">
+                <div class="error text-danger">
+                    Enter an UserId.
+                </div>
+            </div>
+        </div>
+        <div class="form-field d-flex align-items-center">
+            <span class="fas fa-key"></span>
+            <input type="password" name="password" id="password" placeholder="Password" formControlName="password"
+                required>
+
+        </div>
+        <div class="form-outline form-white mb-4">
+            <div *ngIf="submitted && f['password'].errors">
+                <div class="error text-danger">
+                    Enter a password.
+                </div>
+            </div>
+        </div>
+        <div class="form-field d-flex align-items-center">
+            <span class="fas fa-key"></span>
+            <input type="text" name="mobile" id="mobile" placeholder="Mobile No" formControlName="mobile" required>
+
+        </div>
+        <div class="form-outline form-white mb-4">
+            <div *ngIf="submitted && f['mobile'].errors">
+                <div class="error text-danger">
+                    Enter Your mobile.
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn mt-3">Register</button>
+    </form>
+    <div class="text-center fs-6">or <a href="login">Login here</a> </div>
+</div>

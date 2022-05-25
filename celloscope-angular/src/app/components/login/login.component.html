@@ -1,0 +1,35 @@
+<div class="wrapper">
+    <div class="logo"> <img src="https://www.seekpng.com/png/detail/138-1388103_user-login-icon-login.png" alt="">
+    </div>
+    <div class="text-center mt-4 name"> Login </div>
+    <form class="p-3 mt-3" (ngSubmit)="login()" [formGroup]="formGroup">
+        <div class="form-field d-flex align-items-center">
+            <span class="far fa-user"></span>
+            <input type="text" name="userId" id="userId" placeholder="User ID" formControlName="userId" required>
+
+        </div>
+        <div class="form-outline form-white mb-4">
+            <div *ngIf="submitted && f['userId'].errors">
+                <div class="error text-danger">
+                    Enter Your UserId.
+                </div>
+            </div>
+        </div>
+        <div class="form-field d-flex align-items-center">
+            <span class="fas fa-key"></span>
+            <input type="password" name="password" id="password" placeholder="Password" formControlName="password"
+                required>
+
+        </div>
+        <div class="form-outline form-white mb-4">
+            <div *ngIf="submitted && f['password'].errors">
+                <div class="error text-danger">
+                    Enter Your password.
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn mt-3">Login</button>
+    </form>
+    <div class="text-center fs-6"> <a href="forgetPassword">Forget password?</a> or <a href="registration">create
+            User</a> </div>
+</div>

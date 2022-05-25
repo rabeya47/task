@@ -1,0 +1,19 @@
+<div class="wrapper">
+
+    <div class="text-center mt-4 name"> Enter Your User Id </div>
+    <form class="p-3 mt-3" (ngSubmit)="userMatch()" [formGroup]="formGroup">
+        <div class="form-field d-flex align-items-center">
+            <span class="far fa-user"></span>
+            <input type="text" name="userId" id="userId" placeholder="User ID" formControlName="userId" required>
+
+        </div>
+        <div class="form-outline form-white mb-4">
+            <div *ngIf="submitted && f['userId'].errors">
+                <div class="error text-danger">
+                    Enter Your UserId.
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn mt-3">Submit</button>
+    </form>
+</div>
